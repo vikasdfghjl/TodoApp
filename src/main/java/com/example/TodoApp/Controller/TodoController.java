@@ -32,4 +32,10 @@ public class TodoController {
     public String deleteTask(@RequestParam String id){
         return todoService.deleteTask(id);
     }
+
+    @PutMapping("/update/task")
+    @ResponseStatus(HttpStatus.CREATED)
+    public String updateTask(@RequestBody TodoTO todo){
+        return todoService.updateTask(todo);
+    }
 }

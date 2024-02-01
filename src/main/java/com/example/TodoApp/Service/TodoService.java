@@ -39,4 +39,18 @@ public class TodoService {
         }
         return "Task deleted Successfully";
     }
+
+    public String updateTask(TodoTO todo) {
+        try{
+            Todo task = Todo.builder()
+                    .id(todo.getId())
+                    .task(todo.getTask()).build();
+            todoRepository.save(task);
+        }catch(Exception ignored){
+
+        }
+
+        return "Task Updated Successfully";
+    }
+
 }
