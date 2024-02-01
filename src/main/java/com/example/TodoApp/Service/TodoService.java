@@ -6,6 +6,9 @@ import com.example.TodoApp.Repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class TodoService {
     @Autowired
@@ -19,4 +22,12 @@ public class TodoService {
     return "Task created Successfully";
     }
 
+    public List<Todo> getTask() {
+        List<Todo> todoList = new ArrayList<>();
+        try{
+            todoList = todoRepository.findAll();
+        }catch (Exception ignored){}
+        return todoList;
+
+    }
 }
