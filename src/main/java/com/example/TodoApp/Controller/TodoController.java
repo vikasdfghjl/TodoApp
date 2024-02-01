@@ -26,4 +26,10 @@ public class TodoController {
     public List<Todo> getTasks(){
         return todoService.getTask();
     }
+
+    @GetMapping("/delete/task")
+    @ResponseStatus(HttpStatus.OK)
+    public String deleteTask(@RequestParam String id){
+        return todoService.deleteTask(id);
+    }
 }

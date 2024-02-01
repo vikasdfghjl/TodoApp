@@ -30,4 +30,13 @@ public class TodoService {
         return todoList;
 
     }
+
+    public String deleteTask(String id) {
+        try{
+            todoRepository.deleteById(id);
+        }catch (Exception ignored){
+
+        }
+        return "Task deleted Successfully";
+    }
 }
